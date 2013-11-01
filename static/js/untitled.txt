@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CORRESPONDENCIA</title>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+	$(window).load(pos);
+	$(document).ready(function(){
+		
+		
+		pos();
+		
+		$(window).bind('resize', function() {
+			pos();
+		});
+		
+		$('.ee a').add('#menu menuitem').bind("click", function(e){ 
+			e.preventDefault();
+		});
+
+		$('.closebutton a').bind("click", function(e){ 
+
+			$(this).parent().parent().hide();
+			e.preventDefault();
+		});
+
+		/*$('.menuitem').bind("click", function(e){ 
+			$('.page').hide();
+			p = ($(this).text().toLowerCase());
+			$('#page_' + p).show();
+			e.preventDefault();
+		});*/
+
+
+		/*$('#logo').add('#dates').bind("click", function(e){ 
+			$('.ee').show();
+			$('.page').hide();
+			onClicked();
+			e.preventDefault();
+		});*/
+
+		onClicked();
+		
+/*		
+		$('a[href^="http://"]')
+  			.attr("target", "_blank");*/
+		
+	});
+	
+	function pos() {
+		var z = 1;
+		$('.ee').each(function(i,e) {
+						var visible = "true";
+			var x = 500 - z*15 ;
+			var y = 60 + z*10 ;
+						$(this).css('position','absolute');
+			$(this).css('left', x+'px');
+			$(this).css('top', y+'px');
+			$(this).css('z-index', z++);
+		});		
+
+	/*	var x = Math.round(($(window).width()/2) - ($('#logo').outerWidth()/2));
+		var y = Math.round(($(window).height()/2) - ($('#logo').outerHeight()/2));
+		$('#logo').css('left', x+20+'px');
+		$('#logo').css('top', y-290+'px');
+
+	*/	/*var x = Math.round(($(window).width()/2) - ($('#dates').outerWidth()/2));
+		var y = Math.round(($(window).height()/2) - ($('#dates').outerHeight()/2));
+		$('#dates').css('left', x+20+'px');
+		$('#dates').css('top', y+280+'px');
+
+		var x = Math.round(($(window).width()/2) - ($('#menu').outerWidth()/2));
+		var y = Math.round(($(window).height()/2) - ($('#menu').outerHeight()/2));
+		$('#menu').css('left', x-420+'px');
+		$('#menu').css('top', y-30+'px');
+
+		var x = Math.round(($(window).width()/2) - ($('#link').outerWidth()/2));
+		var y = Math.round(($(window).height()/2) - ($('#link').outerHeight()/2));
+		$('#link').css('left', x+460+'px');
+		$('#link').css('top', y-30+'px');
+*/
+
+		var x = Math.round(($(window).width()/2)) - ($('.page:first').outerHeight()/2);
+
+		//$('.page').css('top', '-220px');
+
+
+	}
+
+	function onClicked() {
+		$('.ee')
+			.unbind("click")
+			.removeClass("pointer");
+
+		
+		$('.ee:visible:last')
+			.addClass("pointer")
+			.bind("click", function(e){
+				$(this).hide();
+				/*if($('.ee:visible').length < 2) {
+					//$('.ee').show();
+				} else {
+					$(this).hide();
+				}*/
+				
+				onClicked();
+			});
+		
+		$('#link').html($('.ee:visible:last').find('.link').html());
+	}
+
+</script>
+</head>
+<body>
+<div id="logo" class=""> <a href="index.php?"> <img  src="correspondencia_iso.jpg" alt="logo" /> </a> </div>
+<div id="dates" class="pointer"> <a href="">  </a> </div>
+<div id="link">
+  <p></p>
+</div>
+<div id="container">
+  <div class="text text_issue_1">
+  <ul>
+  	<li>Dossiers visuales: Mark Borthwick & Wolfgang Tillmans.</li>
+  	<li>Fragmentos visuales: Amit Berlowitz, Mathew Brady, Cedrick Eymenier, Kava Gorna, Alistair Hall, Gert Jonkers, Oskar Karlin, Nemanja Knezevic, Ana Armendariz, Luz Gianni, Mariana Higa, Fernando Mariani, Angeles Peña, Nahuel Vecino.</li>
+  	<li>Textos: Marcelo Gomes, Angela Hill,  Cameron McKean, Harsh Patel, Javier Arroyuelo, Alejandro Cesarco, Edgardo Cozarinsky, María Gainza, Carmen Iriondo, Felisa Pinto, Máximo Tuja.</li>
+  	<li>Extractos: Kenneth Anger, Richard Brautigan, Jeff Buckley, Ralph Caplan, Francois Cheng, Clarice Lispector, Lucius Seneca, Rita Schnitzer, Walt Whitman, Domingo Faustino Sarmiento, Alfonsina Storni.</li>
+  	<li>Cartas: Jacques Derrida, Francis Scott Fitzgerald, Ernest Hemingway, Ted Hughes, Jean-Jacques Rousseau, Madame de Sévigné, Susan Sontag, Diana Vreeland, Oscar Wilde, Victoria Ocampo.</li>
+   </ul>
+  </div>
+  	<div class="ee img"><img src="issues/1_14.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_13.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_12.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_11.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_10.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_09.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_08.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_07.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_0691.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_05.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_04.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_03.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_0288.png" alt="-"/></div>
+ 	 	<div class="ee img"><img src="issues/1_01.png" alt="-"/></div>
+</div>
+
+</div>
+<div id="menu">
+  <p class="menuitem"><a href="?s=about">Información</a></p>
+     <p class="menuitem selected"><a href="?edicion=1">Número 1</a></p>
+  <p class="menuitem"><a href="?edicion=2">Número 2</a></p>
+  
+ 
+  <p class="menuitem"><a href="?s=stockist">Distribución</a></p>
+  <p class="menuitem"><a href="?s=order">Adquirir</a></p>
+      <p class="menuitem"><a href="?s=contact">Contacto</a></p>
+      <p class="menuitem"><a href="/eucaliptus/" onclick="window.open(this.href); return false;">Oficina</a></p> 
+  <p class="menuitem"><a href="?s=news">Novedades</a></p>   
+</div>
+  </body>
+</html>

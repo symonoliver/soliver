@@ -1,0 +1,8 @@
+_settings.py
+*.pyc
+*.pdf
+*.jpeg
+*.jpg
+*.png
+.DS_Store
+.elasticbeanstalk/
